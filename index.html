@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="header_style.css"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     
@@ -58,15 +60,14 @@
 <body>
 
     <nav>
-        <a href="./index.html" class="active">Home</a>
+        <a href="./index.html" class="active" id="currTab">Home</a>
         <a href="./99-projects.html">Projects</a>
         <a href="./99-sidequest.html">Side Quests</a>
         <a href="./99-contact.html" class="accent">Contact Me</a>
       </nav>
 
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-
+      <h1>Hello World!</h1>
+<p onload="setFocusOnLoad()" id="t1">I'm hosted with GitHub Pages.</p>
 <h2>Tabs</h2>
 <p>Click on the buttons inside the tabbed menu:</p>
 
@@ -105,6 +106,12 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+
+document.getElementById("currTab").focus();
+document.getElementById("currTab").setAttribute(set)
+
+
 </script>
 
 

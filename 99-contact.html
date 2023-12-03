@@ -3,9 +3,47 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="header_style.css"/>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     body {font-family: Arial;}
+
+    :root{
+    --overlay-color-1: #ff0000;
+    --overlay-color-2: #0000ff;
+    --anim-duration: 2s;
+}
+
+#gradient {
+    opacity: 0.8;
+    background: none;
+}
+
+#gradient:after,
+#gradient:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#gradient:before {
+    background: linear-gradient(135deg, var(--overlay-color-2) 0%, var(--overlay-color-1) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out 0s infinite alternate;
+}
+
+#gradient:after {
+    background: linear-gradient(135deg, var(--overlay-color-1) 0%, var(--overlay-color-2) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out calc(-1 * var(--anim-duration)) infinite alternate;
+}
+
+@keyframes OpacityAnim {
+    0%{opacity: 1.0}
+    100%{opacity: 0.0}
+}
+
+
     </style>
     </head>
 
@@ -15,10 +53,12 @@
         <a href="./index.html">Home</a>
         <a href="./99-projects.html">Projects</a>
         <a href="./99-sidequest.html">Side Quests</a>
-        <a href="./99-contact.html" class="active">Contact Me</a>
+        <a href="./99-contact.html" class="active" id="currTab">Contact Me</a>
       </nav>
 
-<h1>This is my contact page</h1>
+      <div id="gradient">
+        <h1>This is my contact page</h1>
+      </div>
 <p>With some of my contact info:</p>
 
 <h2>Not here yet tho</h2>
@@ -26,4 +66,7 @@
 
 
 </body>
+<script>
+    document.getElementById("currTab").focus();
+</script>
 </html>
