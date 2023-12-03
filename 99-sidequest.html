@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="header_style.css"/>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     body {font-family: Arial;}
@@ -14,7 +16,7 @@
     <nav>
         <a href="./index.html">Home</a>
         <a href="./99-projects.html">Projects</a>
-        <a href="./99-sidequest.html" class="active">Side Quests</a>
+        <a href="./99-sidequest.html" class="active" id="currTab">Side Quests</a>
         <a href="./99-contact.html" class="accent">Contact Me</a>
       </nav>
 
@@ -26,4 +28,7 @@
 
 
 </body>
+<script>
+    document.getElementById("currTab").focus();
+</script>
 </html>
